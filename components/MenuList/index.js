@@ -3,12 +3,11 @@ import classes from "./menu-list.module.scss";
 export default function MenuList({ recipesData }) {
   return (
     <>
-      {recipesData.map(({id, name, category, summary, side_photo, allergens }) => (
+      {recipesData.map(({id, name, category, summary, side_photo, allergens, barcodeURL }) => (
         <div key={id}>
           <h2>{name}</h2>
           <h3>{category}</h3>
           <p>{summary}</p>
-          <img className={classes.recipeImg} src={side_photo} alt="" />
           <p>
             {" "}
             Allergens:{" "}
@@ -16,6 +15,7 @@ export default function MenuList({ recipesData }) {
               index !== allergens.length - 1 ? `${allergen}, ` : allergen
             )}
           </p>
+          <img src={barcodeURL} alt="" />
         </div>
       ))}
     </>
