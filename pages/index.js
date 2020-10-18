@@ -1,33 +1,23 @@
 import Head from "next/head";
 import axios from "axios";
 import MenuList from "../components/MenuList";
+import useSwr from "swr";
 
-export async function getStaticProps() {
-  try {
-    const recipesDataReceived = await axios.get(
-      "https://fridge.kitchenmate.com/api/public/menus/95/recipes"
-    );
-    const recipesData = recipesDataReceived.data.map(
-      ({
-        id,
-        name,
-        category,
-        summary,
-        side_photo,
-        nutrition: { allergens },
-      }) => ({ id, name, category, summary, side_photo, allergens })
-    );
-    return {
-      props: {
-        recipesData: recipesData,
-      },
-    };
-  } catch (err) {
-    console.error("Unexpected error ocurred while fetching recipes data", err);
-  }
+const dataFetcher = async (url) => {
+  const fetchedData = await axios.get(url);
+  return fetchedData.data; 
 }
 
-export default function Home({ recipesData }) {
+export default function Home() {
+
+  const { data, error } = useSwr('/api/menus/95/barcodes', dataFetcher);
+  if (error) {
+    return <div>Failed to fetch recipes</div>
+  }
+  if (!data) {
+    return <div>Loading...Please wait</div>
+  }
+ 
   return (
     <div className="container">
       <Head>
@@ -35,7 +25,7 @@ export default function Home({ recipesData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <MenuList recipesData={recipesData} />
+        <MenuList recipesData={data} />
       </main>
     </div>
   );
