@@ -1,9 +1,14 @@
-.recipesDiv{
+.recipesDiv {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 60%;
+  margin: auto;
+  border: 2px solid black;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
 }
 
 .barcodeImg {
-  height: 8rem;
+  height: 6rem;
 }
