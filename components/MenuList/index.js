@@ -4,7 +4,8 @@ export default function MenuList({ recipesData }) {
   return (
     <>
       {recipesData.map(({id, name, category, summary, visible_allergens, visible_intolerances, barcodeURL }) => (
-        <div key={id}>
+         <div key={id} className={classes.recipesDiv}>
+          <section>
           <h2>{name}</h2>
           <h3>{category}</h3>
           <p>{summary}</p>
@@ -19,8 +20,9 @@ export default function MenuList({ recipesData }) {
             {visible_intolerances.map((intolerance, index) =>
               index !== visible_intolerances.length - 1 ? `${intolerance}, ` : intolerance
             )}
-          </p>
-          <img src={barcodeURL} alt="" />
+            </p>
+            </section>
+           <img className={classes.barcodeImg} src={barcodeURL} alt="" />
         </div>
       ))}
     </>

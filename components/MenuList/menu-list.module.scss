@@ -1,4 +1,9 @@
-.recipeImg {
-  width: 15rem;
-  height: 10rem;
+.recipesDiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.barcodeImg {
+  height: 8rem;
 }
