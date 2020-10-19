@@ -2,11 +2,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 60%;
   margin: auto;
   border: 2px solid black;
-  padding-left: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 60%;
+  padding: 0.5rem;
+
+  @media print {
+    margin-bottom: 5px;
+    width: 150mm;
+    height: 50mm;
+    break-after: page;
+  }
 }
 
 .barcodeImg {
