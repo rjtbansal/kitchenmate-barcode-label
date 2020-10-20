@@ -13,6 +13,14 @@
     width: 150mm;
     height: 50mm;
     break-after: page;
+    /*@page unsupported in Safari:
+https://developer.mozilla.org/en-US/docs/Web/CSS/@page
+*/
+    @page {
+      size: 150mm 50mm;
+      width: unset;
+      break-after: page;
+    }
   }
 }
 
