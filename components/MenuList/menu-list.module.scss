@@ -1,4 +1,21 @@
-.recipeImg {
-  width: 15rem;
-  height: 10rem;
+.recipesDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  border: 2px solid black;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 60%;
+  padding: 0.5rem;
+
+  @media print {
+    width: 150mm;
+    height: 50mm;
+    break-after: page;
+  }
+}
+
+.barcodeImg {
+  height: 6rem;
 }

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
+    "bwip-js": "^2.0.11",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
