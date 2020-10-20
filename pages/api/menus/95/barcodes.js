@@ -1,6 +1,7 @@
 /**APi Endpoint: http://localhost:3000/api/menus/95/barcodes */
 import axios from "axios";
 import bwipJs from "bwip-js";
+import fs from "fs";
 
 export default async function handler(_req, res) {
   try {
@@ -15,15 +16,25 @@ export default async function handler(_req, res) {
         summary,
         nutrition: { visible_allergens, visible_intolerances },
       }) => {
-        /**attempting to generate image */
         bwipJs.toBuffer({
           bcid: "code128",
           text: "km12345",
           includetext: true,
           textxalign: "center",
-        }).then(png => console.log(png))
-          .catch(err => res.status(500).json(err));
-        
+        }).then((png, err) => {
+          if (err) {
+            console.error('Unable to save image file', err);
+          }
+          else {
+            fs.writeFile(`./public/id-${id}.png`, png, (err) => {
+              if (err) {
+                return console.error("Error while writing file. ", err);
+              }
+              console.log('Image file saved successfully');
+            });
+          }
+        })
+          .catch(err => console.error("Uknown error occurred while generating barcode "));
         return {
         id,
         name,
