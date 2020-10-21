@@ -17,6 +17,6 @@ Features Overview:
 
 Future Improvements if had more time:
 
-- Would have liked to completely implement the PDF generation feature.
+- Would have liked to completely implement the PDF generation feature. Somehow after hitting the API to get PDF I was instead getting a type FILE. Upon converting it to PDF all my data appeared as a JSON printed in the file. So need to debug on my end why is that the case.
 - Styling of labels could have been improved more with more data on the label
 - Code could have been refactored more especially the data used to make API calls
