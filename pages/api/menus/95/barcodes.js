@@ -44,7 +44,7 @@ export default async function handler(_req, res) {
         return {
           id,
           name: name.split(" ").map(word => word.charAt(0).toUpperCase()+word.substring(1)).join(" "),
-          category,
+          category: category[0].toUpperCase()+category.substring(1),
           summary,
           visible_allergens,
           visible_intolerances,

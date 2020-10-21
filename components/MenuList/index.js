@@ -14,9 +14,11 @@ export default function MenuList({ recipesData }) {
           barcodeURL,
         }) => (
           <div key={id} className={classes.recipesDiv}>
-            <section>
-              <h2>{name}</h2>
-              <h3>{category}</h3>
+              <section className={classes.recipesDivSection}>
+              <div className={classes.recipesDivInner}>
+                  <h3>{name}</h3>
+                  <h3>{category}</h3>
+              </div>
               <p>{summary}</p>
               <p>
                 Contains:
