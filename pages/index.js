@@ -2,6 +2,7 @@ import Head from "next/head";
 import axios from "axios";
 import MenuList from "../components/MenuList";
 import React, { useState, useEffect } from "react";
+import classes from "../styles/utils.module.scss";
 
 export default function Home() {
   let [recipesPdfURL, setRecipesPdfURL] = useState("");
@@ -38,9 +39,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <button type="button" onClick={(e) => generatePDFHandler(e)}>
-          Generate PDF
-        </button>
+        <div className={classes.generatePdfButtonDiv}>
+          <button className={classes.generatePdfButton} type="button" onClick={(e) => generatePDFHandler(e)}>
+              Generate PDF
+          </button>
+        </div>
         <MenuList recipesData={recipesData} />
       </main>
     </div>
