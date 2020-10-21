@@ -1,0 +1,21 @@
+.generatePdfButton {
+  background-color: #115293;
+  color: #ffffee;
+  border-radius: 5px;
+  padding: 10px;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #517ec4;
+  }
+}
+
+.generatePdfButtonDiv {
+  display: flex;
+  justify-content: center;
+  @media print {
+    display: none;
+  }
+}
