@@ -22,7 +22,7 @@ export default function Home() {
     try {
       const pdfUrlReceived = await axios.get("/api/menus/95/barcodes.pdf");
       setRecipesPdfURL(pdfUrlReceived.data.pdfUrl);
-      console.log(pdfUrlReceived.data.pdfUrl);
+      alert(`Received URL but haven't been able to complete PDF generation: ${pdfUrlReceived.data.pdfUrl} `)
     } catch (err) {
       return <h2>Unknown Error ocurred while fetching recipes pdf url</h2>;
     }
