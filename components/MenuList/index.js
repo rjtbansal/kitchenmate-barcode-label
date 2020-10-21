@@ -20,7 +20,7 @@ export default function MenuList({ recipesData }) {
                   <h3>{category}</h3>
               </div>
               <p className={classes.recipesDivSummary}>{summary}</p>
-              <p>
+              <p className={classes.recipesDivParagraph}>
                 <span className={classes.recipesDivContainsTitle}>Contains</span>:<span className={classes.recipesDivContains}>
                 {visible_allergens.map((allergen, index) =>
                   index !== visible_allergens.length - 1
