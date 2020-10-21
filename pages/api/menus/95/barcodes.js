@@ -43,7 +43,7 @@ export default async function handler(_req, res) {
           );
         return {
           id,
-          name,
+          name: name.split(" ").map(word => word.charAt(0).toUpperCase()+word.substring(1)).join(" "),
           category,
           summary,
           visible_allergens,
