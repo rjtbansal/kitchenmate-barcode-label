@@ -1,7 +1,6 @@
 .generatePdfButton {
   background-color: #115293;
   color: #ffffee;
-  font-weight: bold;
   border-radius: 5px;
   padding: 10px;
   text-transform: uppercase;
@@ -16,4 +15,7 @@
 .generatePdfButtonDiv {
   display: flex;
   justify-content: center;
+  @media print {
+    display: none;
+  }
 }
