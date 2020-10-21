@@ -3,7 +3,7 @@ import axios from "axios";
 
 /**Current tunnel address: https://8b17b019b47f.ngrok.io/ */
 
-export default async function handler(req, res) {
+export default async function handler(_req, res) {
 
   try {
     const receivePDFForRecipes = await axios.post("https://dev-pdfkm.now.sh", {
