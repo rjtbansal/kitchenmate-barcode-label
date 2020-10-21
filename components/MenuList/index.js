@@ -19,22 +19,27 @@ export default function MenuList({ recipesData }) {
                   <h3>{name}</h3>
                   <h3>{category}</h3>
               </div>
-              <p>{summary}</p>
+              <p className={classes.recipesDivSummary}>{summary}</p>
               <p>
-                Contains:
+                <span className={classes.recipesDivContainsTitle}>Contains</span>:<span className={classes.recipesDivContains}>
                 {visible_allergens.map((allergen, index) =>
                   index !== visible_allergens.length - 1
                     ? `${allergen}, `
                     : allergen
-                )}
+                    )}
+                  </span>
               </p>
-              <p>
-                Intolerances:
-                {visible_intolerances.map((intolerance, index) =>
-                  index !== visible_intolerances.length - 1
-                    ? `${intolerance}, `
-                    : intolerance
-                )}
+                <p>
+                  <span className={classes.recipesDivContainsTitle}>
+                    Intolerances:
+                       </span>
+                  <span className={classes.recipesDivContains}>
+                    {visible_intolerances.map((intolerance, index) =>
+                      index !== visible_intolerances.length - 1
+                        ? `${intolerance}, `
+                        : intolerance 
+                        )}
+                    </span>
               </p>
             </section>
             <img className={classes.barcodeImg} src={barcodeURL} alt="" />
