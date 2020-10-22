@@ -4,7 +4,7 @@ Technology Stack:
 
 Running the Project:
 
-- Download/clone the project from github
+- Download/clone the project from github: (https://github.com/rjtbansal/kitchenmate-barcode-label)
 - In CLI, run 'npm install' to install all packages and dependencies from package.json
 - Run 'npm run dev' to trigger nextJS server
 - Access: http://localhost:3000/
